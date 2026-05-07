@@ -60,9 +60,10 @@ class Matriz():
             raise ValueError
         new_mat = [[0 for _ in range(other.lin)] for _ in range(self.col)]
         for i in range(self.n):
-            for j in range(other.m):
-                for k in range(self.col):
-                    new_mat[i][j] += self.mat[i][k] * other.mat[k][j]
+            for k in range(self.col):
+                bij = self.mat[i][k]
+                for j in range(other.col):
+                    new_mat[i][j] += bij * other.mat[k][j]
         new_mat = self.arrumar(new_mat, self.lin, other.col)
         return Matriz(self.lin, other.col, new_mat)
 
