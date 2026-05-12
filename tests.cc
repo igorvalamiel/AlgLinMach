@@ -10,5 +10,10 @@ int main(){
         }
     }
 
+    int value;
+    cin >> value;
+
+    cout << value << endl;
+
     return 0;
 }
